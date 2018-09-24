@@ -1,0 +1,19 @@
+{
+  "name": "jokenpo",
+  "version": "1.0.0",
+  "description": "Um clássico jogo de pedra, papel e tesoura",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arthurabreu00/Jokenpo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arthurabreu00/Jokenpo/issues"
+  },
+  "homepage": "https://github.com/arthurabreu00/Jokenpo#readme"
+}
