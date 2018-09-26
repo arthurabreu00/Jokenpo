@@ -1,14 +1,10 @@
-document.querySelector("body").addEventListener("click",selecionar);
+document.querySelector(".jogOne").addEventListener("click",()=>{
 
-function selecionar(){
-    document.querySelectorAll(".hide").forEach((div)=>{
-        div.addEventListener("click",()=>{
+  div = document.querySelectorAll(".hide");
 
-            console.log(div.innerHTML);
-            return div.innerHTML
-            
-        })
-            
-    })
+    for(let i = 0; i < 3; i++){
+        div[i].innerHTML = "Oi"
+    
+    }
 
-}
+});
