@@ -9,39 +9,55 @@ class GameController{
 
         // Determinando um valor para a jogada;
         this.val = 0;
+        this.pc = this.getRandom();
         this.click = false;
 
         // Selecionando os elementos do computador;
         this.papelTwo = document.querySelector("#paper-two");
         this.rockTwo = document.querySelector("#rock-two");
         this.sheerTwo = document.querySelector("#scissors-two");
+        
+        
 
         this.initEvent();
 
 
     }
 
+    
+    victory(){
+
+
+    }
+
+    getRandom(){
+        return Math.floor(Math.random() * 10)
+    }
+
     initEvent(){
-        // this.mouseOverTrue();
+
+        
+
         if(!this.click){
 
             this.papelOneExe();
             this.rockOneExe();
             this.sheerOneExe();
-
         }
+
+        this.victory();
   
 
     }
 
     
-    /* capitalize(txt){
+    capitalize(txt){
 
         let str = txt.toLowerCase();
 
         let rtn = str.charAt(0).toUpperCase() + str.slice(1);
         return rtn
-    } */
+    } 
 
 
     blockButtons(){
@@ -110,9 +126,60 @@ class GameController{
         `;
         this.click = true;
         });
-    
-       
     }
+
+
+    papelOneExe(){
+
+        this.papelOne.addEventListener('click', ()=>{
+
+            this.val = 2;
+            this.blockButtons();
+            this.papelOne.innerHTML =   
+            `
+            <h2>Papel</h2>
+            <img src="img/papelColor.png">
+            `;
+            this.click = true;
+        
+        });
+
+        
+    }
+
+    rockOneExe(){
+   
+
+        this.rockOne.addEventListener('click', ()=>{
+            this.val = 1;
+            this.blockButtons();
+    
+            this.rockOne.innerHTML = 
+            `
+            <h2>Pedra</h2>
+            <img src="img/pedraColor.png">
+            `;
+            this.click = true;
+    
+            });
+        
+    }
+
+    sheerTwoExe(){
+
+        this.sheerTwo.addEventListener('click', ()=>{
+        this.val = 3;
+        this.blockButtons();
+
+        this.sheerTwo.innerHTML = 
+        `
+        <h2>Tesoura</h2>
+        <img src="img/tesouraColor.png">
+        `;
+        this.click = true;
+        });
+    }
+
 
 
 }

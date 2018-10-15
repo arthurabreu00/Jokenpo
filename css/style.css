@@ -89,3 +89,15 @@ body{
     background: #db0f0f
 
 }
+
+.colorized{
+    color:rgb(50, 104, 205);
+}
+.estasticas{
+    padding: 20px;
+    font-size: 2em;
+    float: left;
+    position: absolute;
+    top:100%;
+
+}
