@@ -1,49 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Jokenpo</title>
-    <link rel="icon" href="imagens/tesouraColor..png">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Charmonman|Oswald|Rajdhani|Teko|Vollkorn" rel="stylesheet">
 </head>
+
 <body>
-<div class="jogOne"> 
-    <div class="bannerOne"> Jogador </div>
-    <div class="img"> 
-        <div class="row papel">  
-            <img src="imagens/papelPB.png"  class="hi2de" alt="papel" /> <span class="hide">Papel</span>
+    <menu id="titulo">
+        <h1>
+            Jokenpo
+        </h1>
+    </menu>
+
+    <div class="player"><br>
+        <span class="one-txt"> &nbsp; Jogador &ensp; &nbsp; <br> <br>
+        <center><i class="far fa-user"></i> &emsp; </center></span> <br>
+        
+    </div> <br> <br>
+
+    <div id="one">
+        <div class="el-one el" id="paper-one">
+            <h2>Papel</h2> 
+            <img src="img/papelPB.png"> 
         </div>
 
-        <div class="row pedra"> 
-            <img src="imagens/pedraPB.png" class="hi2de" alt="pedra"  /> <span class="hide">Pedra</span>
+        <div class="el-one el" id="rock-one">
+            <h2>Pedra</h2>
+            <img src="img/pedraPB.png">
         </div>
-        <div class="row">
-            <img src="imagens/tesouraPB..png" class="hi2de" alt="tesoura" /> <span class="hide">Tesoura</span>
+
+        <div class="el-one el" id="scissors-one">
+            <h2>Tesoura</h2>
+            <img src="img/tesouraPB..png">
         </div>
     </div>
-</div>
-<div class="jogTwo"> 
-        <div class="bannerTwo"> Computador </div>
-        <div class="img"> 
-            <div class="paper op2">  
-                <img src="imagens/papelPB.png" /> 
-                
+
+    <br> <br>
+
+    <div class="player clone">
+            <span class="one-txt">Computador <br> <br>
+                <center> &nbsp; <i class="fas fa-desktop"></i> &emsp; </center></span></span> <br>
+        </div> <br> <br>
+    
+    <div class="two">
+            <div class="el-two el" id="paper-two">
+                <h2>Papel</h2>
+                <img src="img/papelPB.png">
             </div>
     
-            <div class="pedra op2"> 
-                <img src="imagens/pedraPB.png" />
+            <div class="el-two el" id="rock-two">
+                <h2>Pedra</h2>
+                <img src="img/pedraPB.png">
             </div>
-            <div class="tesoura op2">
-                <img src="imagens/tesouraPB..png" />
+    
+            <div class="el-two el" id="scissors-one">
+                <h2>Tesoura</h2>
+                <img src="img/tesouraPB..png">
             </div>
         </div>
-</div>
+    
+    <script src="js/controller/GameController.js"></script>
+    <script src="js/script.js"></script>
 
-<div class="result2"> <h1> Jogador escolheu : </h1></div>
-<div class="result1"> <h1> Computador escolheu : </h1></div>
-<script src="js/script.js"></script>
 </body>
+
 </html>

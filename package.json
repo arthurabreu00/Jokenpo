@@ -16,7 +16,5 @@
     "url": "https://github.com/arthurabreu00/Jokenpo/issues"
   },
   "homepage": "https://github.com/arthurabreu00/Jokenpo#readme",
-  "dependencies": {
-    "bootstrap": "^4.1.3"
-  }
+  "dependencies": {}
 }

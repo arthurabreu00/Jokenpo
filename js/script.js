@@ -1,4 +1,4 @@
-document.querySelector(".jogOne").addEventListener("click", () => {
+/* document.querySelector(".jogOne").addEventListener("click", () => {
 
     div = document.querySelectorAll(".hi2de");
     var result = [0,0,0]
@@ -11,4 +11,6 @@ document.querySelector(".jogOne").addEventListener("click", () => {
         
     }
 
-});
+}); */
+
+let jogo = new GameController();
