@@ -1,103 +1,36 @@
-@import url('https://fonts.googleapis.com/css?family=Amatic+SC|Charmonman|Oswald|Rajdhani|Teko|Vollkorn');
-@import url('https://use.fontawesome.com/releases/v5.4.1/css/all.css');
-*{
-    margin: 0;
-    align-items: center;
-    box-sizing: border-box;
-
-}
-body{
-    background: rgb(250, 246, 246);
-    font-family: sans-serif;
+.logo{
+    max-width: 20px;
 }
 
-#titulo{
-    text-align: center;
-    padding: 20px;
-    background: radial-gradient(#351c1c,#1c1a1a);
+.banner{
+    background: url(./../img/bg4.png);
+    padding: 50px;
     color:white;
-    font-family: 'Charmonman', cursive;
-    font-size: 1.5em;
-}
-.player{
-    color: black;
-    padding: 10px 10px;
-    font-size: 1.5em;
 }
 
-.far{
-    font-size:1.2em;
-}
-
-.one-txt{
-    padding: 10px;
-    margin: 100px 100px;
-    float: left;
-}
-.two-txt{
-    margin: 0 100px;
-    padding: 10px;
-    float: right;
-}
-
-.el{
-    float: left;
-}
-
-.el h2 {
-    text-align: center;
-}
-
-.el img{
-    width: 300px;
-}
-
-.el-one{
-    cursor: pointer;
-    background-color: #17d339;
-    color:white
-}
-
-.paper{
-    background: url(../img/papelPB.png);
-    content: "";
-    background-size: 300px;
-}
-
-.paper:over{
-    background: url(../img/papelColor..png);
-    background-size: 400px;
-
-}
-
-.paper:active{
-
-    background: url(../img/papelColor..png)
-
-}
-
-.el-two{
-    cursor: no-drop;
-}
-
-.clone{
-    margin: 1px; 
-}
-
-.el-two{
-    color:white;
-    background: #db0f0f
-
-}
-
-.colorized{
-    color:rgb(50, 104, 205);
-}
-.estasticas{
+.banner-2{
+    background:linear-gradient(rgb(76, 163, 245),rgb(69, 139, 231),rgb(6, 145, 238));
     padding: 20px;
-    font-size: 2em;
-    float: left;
-    position: absolute;
-    top:100%;
+    color:white;
+}
 
+.img-game,.img-game-2{
+    max-width: 50px;
+    filter: grayscale(100%);
+}
+
+.btn-game,.btn-game-2{
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.btn-game:focus, .btn-game:active,.btn-game-2:focus, .btn-game-2:active{
+    border: none;
+    outline: none;
+}
+
+
+.img-game:hover, .ativado{
+    filter: none;
 }

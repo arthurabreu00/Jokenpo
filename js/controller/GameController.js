@@ -1,185 +1,97 @@
 class GameController{
 
     constructor(){
-
-        // Selecionando os elementos do úsuario;
-        this.papelOne = document.querySelector("#paper-one");
-        this.rockOne = document.querySelector("#rock-one");
-        this.sheerOne = document.querySelector("#scissors-one");
-
-        // Determinando um valor para a jogada;
-        this.val = 0;
-        this.pc = this.getRandom();
-        this.click = false;
-
-        // Selecionando os elementos do computador;
-        this.papelTwo = document.querySelector("#paper-two");
-        this.rockTwo = document.querySelector("#rock-two");
-        this.sheerTwo = document.querySelector("#scissors-two");
-        
-        
-
-        this.initEvent();
-
-
+        this.initEvents();
     }
 
     
-    victory(){
+    initEvents(){
 
+        let buttons = document.querySelectorAll(".btn-game");
+        buttons.forEach(btn =>{
+            btn.addEventListener('click',()=>{
 
-    }
+            buttons.forEach(e =>{
+                    e.querySelector('.img-game').className = 'img-game';
+                }); // Limpar todos os botões da classe ativado.
 
-    getRandom(){
-        return Math.floor(Math.random() * 10)
-    }
+                let btnsComputer = document.querySelectorAll(".btn-game-2"); // Selecionando botões da parte inferior.
 
-    initEvent(){
+                this.computer = Math.floor(Math.random() * 3) + 1; // Atribuindo o número do item.
+        
+                btnsComputer.forEach(e =>{
+
+                    e.querySelector('.img-game-2').className = 'img-game-2';
+
+                }); // Limpar todos os botões da classe ativado.
+
+        
+                
+                btnsComputer[this.computer - 1].querySelector(".img-game-2").className = 'img-game-2 ativado'; // Adicionando a classe ativado.
+
+                this.player = Number(btn.querySelector(".img-game").dataset.item); // Atribuindo o número do item.
+                
+                btn.querySelector(".img-game").className = 'img-game ativado'; // Adicionando a classe ativado.
+
+                this.displayUser();
+
+            });
 
         
 
-        if(!this.click){
 
-            this.papelOneExe();
-            this.rockOneExe();
-            this.sheerOneExe();
+
+        });
+
+
+        console.log(this.player,this.computer,this.resultGame());
+    }
+
+    
+    resultGame(){
+
+        if(this.player == this.computer){
+            return undefined;
         }
 
-        this.victory();
-  
+        else if (this.player == 1){
+            return this.computer == 2 ? true : false;
+        }
 
+        else if (this.player == 2){
+            return this.computer == 3 ? true : false;
+        }
+
+        else {
+            return this.computer == 1 ? true : false;
+        }
     }
+
+    displayUser(){
+
+        let display = document.querySelector('.result-banner');
+
+        switch (this.resultGame()) {
+            case undefined:
+                display.innerHTML = 'Empate';
+                break;
+
+            case true:
+            display.innerHTML = 'O Jogador venceu';
+                break;
+            
+            case false:
+            display.innerHTML = 'O Computador venceu';
+                break;
+
+        }
+    }
+
+
+
+
 
     
-    capitalize(txt){
-
-        let str = txt.toLowerCase();
-
-        let rtn = str.charAt(0).toUpperCase() + str.slice(1);
-        return rtn
-    } 
-
-
-    blockButtons(){
-        this.papelOne.style.cursor= 'no-drop';
-        this.rockOne.style.cursor= 'no-drop';
-        this.sheerOne.style.cursor= 'no-drop';
-
-        this.click = true;
-    }
-
-    desBlockButtons(){
-        this.papelOne.style.cursor= 'pointer';
-        this.rockOne.style.cursor= 'pointer';
-        this.sheerOne.style.cursor= 'pointer';
-
-        this.click = false;
-    }
-
-
-    papelOneExe(){
-
-        this.papelOne.addEventListener('click', ()=>{
-
-            this.val = 2;
-            this.blockButtons();
-            this.papelOne.innerHTML =   
-            `
-            <h2>Papel</h2>
-            <img src="img/papelColor.png">
-            `;
-            this.click = true;
-        
-        });
-
-        
-    }
-
-    rockOneExe(){
-   
-
-        this.rockOne.addEventListener('click', ()=>{
-            this.val = 1;
-            this.blockButtons();
-    
-            this.rockOne.innerHTML = 
-            `
-            <h2>Pedra</h2>
-            <img src="img/pedraColor.png">
-            `;
-            this.click = true;
-    
-            });
-        
-    }
-
-    sheerOneExe(){
-
-        this.sheerOne.addEventListener('click', ()=>{
-        this.val = 3;
-        this.blockButtons();
-
-        this.sheerOne.innerHTML = 
-        `
-        <h2>Tesoura</h2>
-        <img src="img/tesouraColor.png">
-        `;
-        this.click = true;
-        });
-    }
-
-
-    papelOneExe(){
-
-        this.papelOne.addEventListener('click', ()=>{
-
-            this.val = 2;
-            this.blockButtons();
-            this.papelOne.innerHTML =   
-            `
-            <h2>Papel</h2>
-            <img src="img/papelColor.png">
-            `;
-            this.click = true;
-        
-        });
-
-        
-    }
-
-    rockOneExe(){
-   
-
-        this.rockOne.addEventListener('click', ()=>{
-            this.val = 1;
-            this.blockButtons();
-    
-            this.rockOne.innerHTML = 
-            `
-            <h2>Pedra</h2>
-            <img src="img/pedraColor.png">
-            `;
-            this.click = true;
-    
-            });
-        
-    }
-
-    sheerTwoExe(){
-
-        this.sheerTwo.addEventListener('click', ()=>{
-        this.val = 3;
-        this.blockButtons();
-
-        this.sheerTwo.innerHTML = 
-        `
-        <h2>Tesoura</h2>
-        <img src="img/tesouraColor.png">
-        `;
-        this.click = true;
-        });
-    }
-
 
 
 }
