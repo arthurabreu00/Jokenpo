@@ -17,6 +17,7 @@
 .img-game,.img-game-2{
     max-width: 35px;
     filter: grayscale(100%);
+    transition: filter 300ms linear
 }
 
 .btn-game,.btn-game-2{
@@ -28,9 +29,14 @@
 .btn-game:focus, .btn-game:active,.btn-game-2:focus, .btn-game-2:active{
     border: none;
     outline: none;
+
 }
 
 
 .img-game:hover, .ativado{
     filter: none;
+}
+
+.navbar {
+    display: block;
 }
