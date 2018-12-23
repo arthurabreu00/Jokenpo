@@ -3,19 +3,19 @@
 }
 
 .banner{
-    background: url(./../img/bg4.png);
+    background: url(./../img/bg4.png) center center;
     padding: 50px;
     color:white;
 }
 
 .banner-2{
-    background:linear-gradient(rgb(76, 163, 245),rgb(69, 139, 231),rgb(6, 145, 238));
+
     padding: 20px;
     color:white;
 }
 
 .img-game,.img-game-2{
-    max-width: 50px;
+    max-width: 35px;
     filter: grayscale(100%);
 }
 

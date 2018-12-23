@@ -2,6 +2,9 @@ class GameController{
 
     constructor(){
         this.initEvents();
+        this.jogador = document.querySelector('.jogador');
+        this.empate = document.querySelector('.empate');
+        this.pc = document.querySelector('.pc');
     }
 
     
@@ -36,35 +39,24 @@ class GameController{
                 this.displayUser();
 
             });
-
-        
-
-
-
         });
 
-
-        console.log(this.player,this.computer,this.resultGame());
     }
 
     
     resultGame(){
 
-        if(this.player == this.computer){
-            return undefined;
+        switch (this.player) {
+            case this.computer:
+                return undefined;
+            case 1:
+                return this.computer == 2 ? true : false;
+            case 2: 
+                return this.computer == 3 ? true : false;
+            default:
+                return this.computer == 1 ? true : false
         }
 
-        else if (this.player == 1){
-            return this.computer == 2 ? true : false;
-        }
-
-        else if (this.player == 2){
-            return this.computer == 3 ? true : false;
-        }
-
-        else {
-            return this.computer == 1 ? true : false;
-        }
     }
 
     displayUser(){
@@ -73,18 +65,24 @@ class GameController{
 
         switch (this.resultGame()) {
             case undefined:
+                this.empate.innerHTML  = Number(this.empate.innerHTML) + 1;
                 display.innerHTML = 'Empate';
                 break;
 
             case true:
-            display.innerHTML = 'O Jogador venceu';
+            this.pc.innerHTML  = Number(this.pc.innerHTML) + 1;
+            display.innerHTML = 'O Computador venceu';
                 break;
             
             case false:
-            display.innerHTML = 'O Computador venceu';
+            this.jogador.innerHTML  = Number(this.jogador.innerHTML) + 1;
+            display.innerHTML = 'O Jogador venceu';
                 break;
 
         }
+
+
+        
     }
 
 
